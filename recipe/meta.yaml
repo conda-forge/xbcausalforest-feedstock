@@ -12,18 +12,18 @@ source:
 build:
   skip: true  # [py<38]
   script: {{ PYTHON }} -m pip install . -vv
-  number: 4
+  number: 5
 
 requirements:
   build:
     - {{ compiler('cxx') }}
+    - {{ stdlib("c") }}
   host:
     - numpy
     - pip
     - python
   run:
     - python
-    - {{ pin_compatible('numpy') }}
 
 test:
   imports:
