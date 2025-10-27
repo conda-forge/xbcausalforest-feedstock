@@ -10,7 +10,6 @@ source:
   sha256: fbc0f7fc87028ba72bab7de6db2563e34e8501239a18997d4b3babdb066b8969
 
 build:
-  skip: true  # [py<38]
   script: {{ PYTHON }} -m pip install . -vv
   number: 5
 
@@ -22,9 +21,9 @@ requirements:
     - numpy
     - pip
     - python
+    - setuptools
   run:
     - python
-    - {{ pin_compatible('numpy') }}
 
 test:
   imports:
